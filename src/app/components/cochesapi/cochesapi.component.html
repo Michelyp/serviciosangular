@@ -1,0 +1,21 @@
+<div>
+    <h1>Api personas angular</h1>
+    <table class="table table-warning">
+        <thead>
+            <tr>
+                <th>Id persona</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let coche of coches">
+                <td>{{coche.idcoche}}</td>
+                <td>{{coche.marca}}</td>
+                <td>{{coche.modelo}}</td>
+                <td><img style="width: 100px;" src="{{coche.imagen}}"/></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

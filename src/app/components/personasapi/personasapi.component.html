@@ -1,0 +1,21 @@
+<div>
+    <h1>Api personas angular</h1>
+    <table class="table table-warning">
+        <thead>
+            <tr>
+                <th>Id persona</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let persona of personas">
+                <td>{{persona.IdPersona}}</td>
+                <td>{{persona.Nombre}}</td>
+                <td>{{persona.Email}}</td>
+                <td>{{persona.Edad}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,22 @@
+<div>
+    <h1>Api empleados angular</h1>
+    <table class="table table-warning">
+        <thead>
+            <tr>
+                <th>Id Empleado</th>
+                <th>Apellido</th>
+                <th>Funcion</th>
+                <th>Turno</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let empleado of empleados">
+                <td>{{empleado.idEmpleado}}</td>
+                <td>{{empleado.apellido}}</td>
+                <td>{{empleado.funcion}}</td>
+                <td>{{empleado.turno}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
