@@ -12,6 +12,7 @@ import { Plantilla } from 'src/app/models/plantilla';
 export class SelectmultipleComponent implements OnInit {
   public funciones!: Array<string>;
   public empleados!: Array<Plantilla>;
+  public funcionesSeleccionadas!: Array<string>;
   @ViewChild("cajaseleccionado") cajaseleccionadoRef!:ElementRef;
   constructor(private _servicePlantilla:SerciceEmpleados){}
   ngOnInit():void{
@@ -20,12 +21,27 @@ export class SelectmultipleComponent implements OnInit {
       this.funciones = response;
     })
   }
+
+
   mostrarEmpleados():void{
-    this._servicePlantilla.getEmpleadosFunciones(this.funciones).subscribe(response=>{
+    console.log("sdsd");
+    this.funcionesSeleccionadas = new Array<string>;
+    for(var options of this.cajaseleccionadoRef.nativeElement.options){
+      if(options.selected == true){
+        this.funcionesSeleccionadas.push(options.value);
+      
+      }
+    }
+    console.log(this.funcionesSeleccionadas);
+    
+    this._servicePlantilla.getEmpleadosFunciones(this.funcionesSeleccionadas).subscribe(response=>{
       console.log(response);
        this.empleados=response;
       
     })
   }
+
+ 
+
 
 }

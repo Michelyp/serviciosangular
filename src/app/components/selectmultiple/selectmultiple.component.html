@@ -1,27 +1,38 @@
-<select #cajaseleccionado name="cajaseleccionado" class="form-select" multiple aria-label="multiple select example">
-    <option  *ngFor="let funcion of funciones">{{funcion}}</option>
+<form #formplantilla="ngForm">
+  <select
+    #cajaseleccionado
+    name="cajaseleccionado"
+    size="5"
+    class="form-select"
+    multiple
+    aria-label="multiple select example"
+  >
+    <option *ngFor="let funcion of funciones">{{ funcion }}</option>
   </select>
+  <button class="btn btn-info" (click)="mostrarEmpleados()">
+        Mostrar Empleados
+  </button>
 
-  <button (click)="mostrarEmpleados()">Mostrar Empleados</button>
-  <div>
-    <h1>Api empleados angular</h1>
-    <table class="table table-warning">
-        <thead>
-            <tr>
-                <th>Id Empleado</th>
-                <th>Apellido</th>
-                <th>Funcion</th>
-                <th>Turno</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let empleado of empleados">
-                <td>{{empleado.idEmpleado}}</td>
-                <td>{{empleado.apellido}}</td>
-                <td>{{empleado.funcion}}</td>
-                <td>{{empleado.turno}}</td>
+</form>
 
-            </tr>
-        </tbody>
-    </table>
+<div>
+  <h1>Api empleados angular</h1>
+  <table class="table table-warning">
+    <thead>
+      <tr>
+        <th>Id Empleado</th>
+        <th>Apellido</th>
+        <th>Funcion</th>
+        <th>Turno</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let empleado of empleados">
+        <td>{{ empleado.idEmpleado }}</td>
+        <td>{{ empleado.apellido }}</td>
+        <td>{{ empleado.funcion }}</td>
+        <td>{{ empleado.turno }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

@@ -7,8 +7,11 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" [routerLink]="['node_modules']">Home</a>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/selectmultiple']">Múltiple</a>
+          </li>          
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/comics']">Comics</a>
           </li>

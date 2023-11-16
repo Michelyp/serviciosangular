@@ -6,10 +6,14 @@ import { PersonasapiComponent } from "./components/personasapi/personasapi.compo
 import { CochesapiComponent } from "./components/cochesapi/cochesapi.component";
 import { EmpleadosComponent } from "./components/empleados/empleados.component";
 import { SelectmultipleComponent } from "./components/selectmultiple/selectmultiple.component";
+import { HomeComponent } from "./components/home/home.component";
 
 const appRoutes: Routes = [
     {
-        path:"", component:SelectmultipleComponent
+        path:"", component:HomeComponent
+    },
+    {
+        path:"selectmultiple", component:SelectmultipleComponent
     },
     {
         path:"comics", component:LibreriaComponent
@@ -26,3 +30,5 @@ const appRoutes: Routes = [
 ]
 export const appRoutingProvider :any [] =[];
 export const routing:ModuleWithProviders<any>= RouterModule.forRoot(appRoutes);
+
+
